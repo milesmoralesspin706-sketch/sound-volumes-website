@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { CMSData, Book, Author, Work, NewsItem, EventItem, ExtraItem, ArtworkRecord, SiteSettings, SiteId } from './types';
@@ -65,7 +65,7 @@ export function CMSProvider({ children }: { children: React.ReactNode }) {
             // Strip any legacy editorial notes / supplementaryText from cached books
             if (Array.isArray(parsed.books)) {
               parsed.books = parsed.books.map((b: Book) => {
-                const { supplementaryText: _, ...rest } = b;
+                const rest = b;
                 return rest;
               });
             }
@@ -98,7 +98,7 @@ export function CMSProvider({ children }: { children: React.ReactNode }) {
           if (parsed.books && parsed.authors) {
             if (Array.isArray(parsed.books)) {
               parsed.books = parsed.books.map((b: Book) => {
-                const { supplementaryText: _, ...rest } = b;
+                const rest = b;
                 return rest;
               });
             }
@@ -423,3 +423,4 @@ export function useCMS() {
   }
   return context;
 }
+
