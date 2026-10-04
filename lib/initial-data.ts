@@ -1,0 +1,690 @@
+import { CMSData } from './types';
+
+export const INITIAL_CMS_DATA: CMSData = {
+  books: [
+    {
+      id: 'stone-dog',
+      title: 'Stone Dog',
+      slug: 'stone-dog',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      cover: '/images/stone-dog.jpg',
+      microDescription: "Before 'man's best friend,' there was a mistake—and a choice.",
+      shortDescription: "Before 'man's best friend,' there was a mistake—and a choice. Across the harsh Paleolithic expanse, the bond between wolf and human is forged in survival, consequence, and unconditional loyalty.",
+      longDescription: "Before 'man's best friend,' there was a mistake—and a choice. In the bitter cold of the late Pleistocene, a wounded wolf pup and a solitary hunter cross paths not in violence, but in desperate mutual need. Stone Dog chronicles the eternal spark that first tethered humankind to dog—a journey through primal landscapes where trust is hard-won, survival is precarious, and devotion outlasts mortality itself. The opening volume of Jack's journey through time.",
+      buyUrl: 'https://books2read.com/u/bzQWYj',
+      publicationInfo: 'Published by Sound Volumes · Jack Comes Back Volume I',
+      format: 'Paperback',
+      images: ['/images/stone-dog.jpg'],
+      links: [
+        { label: 'Universal Purchase Link', url: 'https://books2read.com/u/bzQWYj' }
+      ],
+      audio: {
+        title: 'Stone Dog: Prologue Reading',
+        sampleAvailable: false
+      },
+      visibility: true,
+      ordering: 1,
+      series: 'Jack Comes Back',
+      seriesOrder: 1
+    },
+    {
+      id: 'iron-dog',
+      title: 'Iron Dog',
+      slug: 'iron-dog',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      cover: '/images/iron-dog.jpg',
+      microDescription: "From iron-age fortresses to blood-soaked shields, Jack returns.",
+      shortDescription: "Reborn into the brutal clash of ancient empires and Celtic hill forts, Jack discovers that while human armor evolves from bronze to iron, loyalty remains an indestructible shield.",
+      longDescription: "From iron-age fortresses to blood-soaked shields, Jack returns into a world of clashing tribes and expanding Roman legions. As an oversized warrior's hound, Jack witnesses the courage and tragedy of men who live by the sword—and the quiet, fierce allegiance that endures when shields shatter and hearthfires turn to ash. Volume II of the Jack Comes Back series.",
+      buyUrl: 'https://books2read.com/u/mgV0Az',
+      publicationInfo: 'Published by Sound Volumes · Jack Comes Back Volume II',
+      format: 'Paperback',
+      images: ['/images/iron-dog.jpg'],
+      links: [
+        { label: 'Universal Purchase Link', url: 'https://books2read.com/u/mgV0Az' }
+      ],
+      audio: {
+        title: 'Iron Dog: Excerpt Audio',
+        sampleAvailable: false
+      },
+      visibility: true,
+      ordering: 2,
+      series: 'Jack Comes Back',
+      seriesOrder: 2
+    },
+    {
+      id: 'gold-dog',
+      title: 'Gold Dog',
+      slug: 'gold-dog',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      cover: '/images/gold-dog.jpg',
+      microDescription: "Across medieval Japan, Afghanistan, France, and Shakespearean London.",
+      shortDescription: "Jack's journey traverses golden ages and turbulent dynasties: from the misty mountains of feudal Japan to caravan trails in Afghanistan, medieval French cloisters, and the bustling timber playhouses of Elizabethan London.",
+      longDescription: "Across medieval Japan, Afghanistan, France, and Shakespearean London, Jack's eternal spirit takes form across centuries of gilded triumphs and quiet human heartbreaks. Whether walking beside a wandering samurai, guarding a solitary mountain traveler along the Silk Road, companion to a cloistered scholar in France, or listening to the opening lines of Hamlet from the pit of the Globe Theatre, Jack remains the constant witness to humanity's yearning for beauty, fellowship, and home.",
+      buyUrl: 'https://books2read.com/u/bPW0Yx',
+      publicationInfo: 'Published by Sound Volumes · Jack Comes Back Volume III',
+      format: 'Paperback',
+      images: ['/images/gold-dog.jpg'],
+      links: [
+        { label: 'Universal Purchase Link', url: 'https://books2read.com/u/bPW0Yx' }
+      ],
+      visibility: true,
+      ordering: 3,
+      series: 'Jack Comes Back',
+      seriesOrder: 3
+    },
+    {
+      id: 'steel-dog',
+      title: 'Steel Dog',
+      slug: 'steel-dog',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      cover: '/images/steel-dog.jpg',
+      microDescription: "From the Sonoran desert to trenches of WWI, Moscow streets, the space race, and Arkansas rescues.",
+      shortDescription: "The modern era tests Jack across the Sonoran desert with an indomitable Scottish terrier, through the mud of the Great War, the cold cobbles of Moscow, the dawn of the space age, and the quiet grace of an Arkansas rescue shelter.",
+      longDescription: "In Steel Dog, Jack steps into the mechanized fury and fragile resilience of the modern era. His lives span the arid trails of the Sonoran desert beside an eccentric prospector, the companionship of a tenacious Scottish terrier, the grim devotion of a trench dog in World War I, the fierce street survival of a Moscow mongrel at the advent of the space race, and the gentle redemption found in an Arkansas animal rescue. A moving testament to the enduring canine spirit in an industrialized world.",
+      buyUrl: 'https://books2read.com/u/3LeKow',
+      publicationInfo: 'Published by Sound Volumes · Jack Comes Back Volume IV',
+      format: 'Paperback',
+      images: ['/images/steel-dog.jpg'],
+      links: [
+        { label: 'Universal Purchase Link', url: 'https://books2read.com/u/3LeKow' }
+      ],
+      visibility: true,
+      ordering: 4,
+      series: 'Jack Comes Back',
+      seriesOrder: 4
+    },
+    {
+      id: 'jack-comes-back-omnibus',
+      title: 'Jack Comes Back: Tales of the Eternal Dog',
+      slug: 'jack-comes-back-tales-of-the-eternal-dog',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      cover: '/images/stone-dog.jpg',
+      microDescription: "The complete collection gathering Stone Dog, Iron Dog, Gold Dog, and Steel Dog.",
+      shortDescription: "The definitive four-volume collection of Jack's reincarnation across ten thousand years of human history, from the late Pleistocene to the modern American South.",
+      longDescription: "Jack Comes Back: Tales of the Eternal Dog collects the complete cycle of Alec Rowell's acclaimed epic: Stone Dog, Iron Dog, Gold Dog, and Steel Dog. Following an immortal canine consciousness through eras of tribal survival, bronze and iron warfare, classical empires, the Renaissance, and twentieth-century mechanized conflict, this omnibus edition presents the full sweep of humanity's most enduring interspecies covenant.",
+      buyUrl: 'https://books2read.com/u/mdrLgW',
+      publicationInfo: 'Sound Volumes Complete Omnibus Edition',
+      format: 'Omnibus Edition',
+      images: ['/images/stone-dog.jpg', '/images/iron-dog.jpg', '/images/gold-dog.jpg', '/images/steel-dog.jpg'],
+      links: [
+        { label: 'Universal Purchase Link', url: 'https://books2read.com/u/mdrLgW' }
+      ],
+      visibility: true,
+      ordering: 5,
+      series: 'Jack Comes Back',
+      seriesOrder: 5
+    }
+  ],
+
+  authors: [
+    {
+      id: 'alec-rowell',
+      name: 'Alec Rowell',
+      slug: 'alec-rowell',
+      shortBio: 'Alec Rowell writes fiction, nonfiction, memoir, and work crossing conventional classifications, spanning Jack Comes Back, Robin Pike mysteries, and the Sixer Diaspora Universe.',
+      fullBio: 'Alec Rowell writes fiction, nonfiction, memoir, and work crossing conventional classifications. His creative and research interests span theatre, filmmaking, linguistics, computer science, artificial intelligence, gardening, history, human/animal relationships, and technology. Following early work in linguistics and computer science, his writing has encompassed technical and nonfiction work, contributions to the Encyclopedia of Monarchies, the Jack Comes Back series, the forthcoming Robin Pike mysteries, the Sixer Diaspora Universe co-created with Laurie Freeman, and personal memoirs. He currently lives and writes surrounded by gardens, research notebooks, and animals.',
+      photographPrimary: '/images/alec-cowled.jpg',
+      photographSecondary: '/images/alec-hen.jpg',
+      photographThird: '/images/alec-forest.jpg',
+      website: 'https://alecrowell.com',
+      selectedWorks: [
+        'Stone Dog',
+        'Iron Dog',
+        'Gold Dog',
+        'Steel Dog',
+        'Look Through Any Window',
+        'Cat and the Fiddle'
+      ],
+      visibility: true,
+      ordering: 1
+    },
+    {
+      id: 'laurie-freeman',
+      name: 'Laurie Freeman',
+      slug: 'laurie-freeman',
+      shortBio: 'Laurie Freeman is a writer and educator working across speculative narrative, human resilience, container orchard cultivation, and the Sixer Diaspora Universe.',
+      fullBio: "Laurie Freeman's professional background spans technical writing, teaching, and instructional design, alongside extensive work in fiction, nonfiction, and speculative narrative. Her interests include container-grown orchard cultivation, speculative worlds, human resilience under extraordinary pressure, and the examination of changing assumptions in science and society. She is the author of works within the Sixer Diaspora Universe, the Storm Rider trilogy, and forthcoming fiction and botanical nonfiction.",
+      photographPrimary: '/images/laurie-portrait.jpg',
+      website: 'https://lauriefreeman.com',
+      selectedWorks: [
+        'Raven',
+        'Cat and the Fiddle',
+        'Storm Rider: The Caves of Future Memory',
+        'One Past Zenith',
+        'Alwilda: Queen of Rovers',
+        'Grow an Apple in a Pot'
+      ],
+      visibility: true,
+      ordering: 2
+    }
+  ],
+
+  works: [
+    // Alec Rowell Works
+    {
+      id: 'look-through-any-window',
+      title: 'Look Through Any Window',
+      slug: 'look-through-any-window',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      typeForm: 'Novel',
+      universeSeries: 'Robin Pike / Hyde, Texas Mysteries',
+      description: 'The inaugural Robin Pike mystery, introducing the town of Hyde, Texas, its layered social topography, long-held regional grievances, and the investigative eye of Robin Pike.',
+      status: 'Draft complete',
+      targetTimeline: 'Target publication: 1st Quarter 2027',
+      visibility: true,
+      ordering: 1,
+      siteVisibility: { soundvolumes: true, alec: true, laurie: false }
+    },
+    {
+      id: 'robin-pike-novel-two',
+      title: 'Second Robin Pike Mystery (Working Title)',
+      slug: 'second-robin-pike-mystery',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      typeForm: 'Novel',
+      universeSeries: 'Robin Pike / Hyde, Texas Mysteries',
+      description: 'The second installment in the Robin Pike series, continuing the investigation of unresolved regional histories and community secrets in Hyde, Texas.',
+      status: 'In outline',
+      targetTimeline: 'Publication timeline to be determined',
+      visibility: true,
+      ordering: 2,
+      siteVisibility: { soundvolumes: true, alec: true, laurie: false }
+    },
+    {
+      id: 'cat-and-the-fiddle',
+      title: 'Cat and the Fiddle',
+      slug: 'cat-and-the-fiddle',
+      author: 'Alec Rowell & Laurie Freeman',
+      authorSlug: 'alec-rowell',
+      coAuthor: 'Laurie Freeman',
+      typeForm: 'Science Fiction Novel',
+      universeSeries: 'Sixer Diaspora Universe',
+      description: 'DESCRIPTION TO COME.',
+      status: 'Complete but subject to a complete rewrite',
+      targetTimeline: 'Likely publication: Late 2027',
+      visibility: true,
+      ordering: 3,
+      siteVisibility: { soundvolumes: true, alec: true, laurie: true }
+    },
+    {
+      id: 'grayford-ouachita-series',
+      title: 'Grayford Ouachita series',
+      slug: 'grayford-ouachita-series',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      typeForm: 'Novel Series',
+      universeSeries: 'Sixer Diaspora Universe',
+      description: 'An expansive science fiction narrative set in the frontier territories of the Sixer Diaspora Universe.',
+      status: 'In outline/early draft',
+      targetTimeline: 'Likely 2028 release',
+      visibility: true,
+      ordering: 4,
+      siteVisibility: { soundvolumes: true, alec: true, laurie: false }
+    },
+    {
+      id: 'memoirs-personal-essays',
+      title: 'Memoirs / Personal Essays',
+      slug: 'memoirs-personal-essays',
+      author: 'Alec Rowell',
+      authorSlug: 'alec-rowell',
+      typeForm: 'Memoir / Nonfiction Collection',
+      universeSeries: 'Personal Nonfiction',
+      description: 'Reflective personal writing crossing theatre, linguistics, artificial intelligence, gardening, and human-animal relationships.',
+      status: 'In development',
+      targetTimeline: 'In development',
+      visibility: true,
+      ordering: 5,
+      siteVisibility: { soundvolumes: true, alec: true, laurie: false }
+    },
+
+    // Laurie Freeman Works
+    {
+      id: 'raven',
+      title: 'Raven',
+      slug: 'raven',
+      author: 'Laurie Freeman',
+      authorSlug: 'laurie-freeman',
+      typeForm: 'Science Fiction Novel',
+      universeSeries: 'Sixer Diaspora Universe',
+      description: 'A focused entry within the Sixer Diaspora Universe examining identity, surveillance, and survival among dispersed human populations navigating deep space isolation.',
+      status: 'Complete, unpublished',
+      targetTimeline: 'Probably early 2027',
+      visibility: true,
+      ordering: 6,
+      siteVisibility: { soundvolumes: true, alec: false, laurie: true }
+    },
+    {
+      id: 'storm-rider-caves-of-future-memory',
+      title: 'Storm Rider: The Caves of Future Memory',
+      slug: 'storm-rider-the-caves-of-future-memory',
+      author: 'Laurie Freeman',
+      authorSlug: 'laurie-freeman',
+      typeForm: 'YA Fantasy Novel (Book 1 of planned trilogy)',
+      universeSeries: 'Storm Rider Trilogy',
+      description: 'Book 1 of a planned Young Adult fantasy trilogy exploring temporal dislocation, ancient ancestral caverns, and the burden of inherited prophecy. Series-universe placement remains under consideration.',
+      status: 'Complete first draft',
+      targetTimeline: 'Expected within approximately 18 months',
+      visibility: true,
+      ordering: 7,
+      siteVisibility: { soundvolumes: true, alec: false, laurie: true }
+    },
+    {
+      id: 'one-past-zenith',
+      title: 'One Past Zenith',
+      slug: 'one-past-zenith',
+      author: 'Laurie Freeman',
+      authorSlug: 'laurie-freeman',
+      typeForm: 'Fiction Novel',
+      universeSeries: 'Independent Fiction',
+      description: 'An exploration of personal turning points, institutional change, and quiet resilience in an evolving community.',
+      status: 'Complete, unpublished',
+      targetTimeline: 'Possibly 2027',
+      visibility: true,
+      ordering: 8,
+      siteVisibility: { soundvolumes: true, alec: false, laurie: true }
+    },
+    {
+      id: 'alwilda-queen-of-rovers',
+      title: 'Alwilda: Queen of Rovers',
+      slug: 'alwilda-queen-of-rovers',
+      author: 'Laurie Freeman',
+      authorSlug: 'laurie-freeman',
+      typeForm: 'Young Adult historical romance',
+      universeSeries: 'Historical Fiction',
+      description: 'A historical romance following the maritime legend of Alwilda, rebellious seafaring, and personal autonomy along northern coastlines.',
+      status: 'Complete, unpublished',
+      targetTimeline: 'Possibly 2027',
+      visibility: true,
+      ordering: 9,
+      siteVisibility: { soundvolumes: true, alec: false, laurie: true }
+    },
+    {
+      id: 'cold-iron-strange-blood',
+      title: 'Cold Iron, Strange Blood',
+      slug: 'cold-iron-strange-blood',
+      author: 'Laurie Freeman',
+      authorSlug: 'laurie-freeman',
+      typeForm: 'Sci-Fi/Fantasy Mystery novella (~50K words)',
+      universeSeries: 'Speculative Mystery',
+      description: 'DESCRIPTION TO COME.',
+      status: 'In work',
+      targetTimeline: 'In work',
+      visibility: true,
+      ordering: 10,
+      siteVisibility: { soundvolumes: true, alec: false, laurie: true }
+    },
+    {
+      id: 'grow-an-apple-in-a-pot',
+      title: 'Grow an Apple in a Pot',
+      slug: 'grow-an-apple-in-a-pot',
+      author: 'Laurie Freeman',
+      authorSlug: 'laurie-freeman',
+      typeForm: 'Full-length illustrated nonfiction',
+      universeSeries: 'Botanical & Horticultural Nonfiction',
+      description: 'DESCRIPTION TO COME.',
+      status: 'In work',
+      targetTimeline: 'In work',
+      visibility: true,
+      ordering: 11,
+      siteVisibility: { soundvolumes: true, alec: false, laurie: true }
+    },
+    {
+      id: 'grow-a-pear',
+      title: 'Grow a Pear',
+      slug: 'grow-a-pear',
+      author: 'Laurie Freeman',
+      authorSlug: 'laurie-freeman',
+      typeForm: 'Full-length illustrated nonfiction',
+      universeSeries: 'Botanical & Horticultural Nonfiction',
+      description: 'DESCRIPTION TO COME.',
+      status: 'In outline',
+      targetTimeline: 'In outline',
+      visibility: true,
+      ordering: 12,
+      siteVisibility: { soundvolumes: true, alec: false, laurie: true }
+    }
+  ],
+
+  news: [
+    {
+      id: 'notes-from-the-editor-inaugural',
+      title: 'Notes from the Editor: On the Origins of Sound Volumes',
+      slug: 'notes-from-the-editor-on-the-origins-of-sound-volumes',
+      date: '2026-08-15',
+      category: 'Notes from the Editor',
+      shortContent: 'A statement of editorial purpose regarding Sound Volumes, literary independence, and our commitment to measured, durable prose.',
+      fullContent: 'Sound Volumes was established on a simple premise: that books should feel designed rather than decorated, and that literature is best served by deliberate, long-term stewardship. In an era of hurried publishing cycles, our catalogue is built around projects of sustained inquiry—from the ten-thousand-year arc of Jack Comes Back to the nuanced regional mysteries of Hyde, Texas, and the expansive architecture of the Sixer Diaspora Universe. We believe in quiet authority, durable bindings, and direct relationships with our readers.',
+      featureOnHome: true,
+      archived: false,
+      published: true
+    },
+    {
+      id: 'jack-comes-back-omnibus-announcement',
+      title: 'Jack Comes Back: Tales of the Eternal Dog Available Across Retailers',
+      slug: 'jack-comes-back-omnibus-available-across-retailers',
+      date: '2026-07-20',
+      category: 'Publication Announcement',
+      shortContent: 'All four volumes of Alec Rowell’s cycle—Stone Dog, Iron Dog, Gold Dog, and Steel Dog—are now accessible via universal retailer links.',
+      fullContent: 'We are pleased to confirm that universal buyer distribution is live for each individual volume in the Jack Comes Back series, as well as the omnibus edition Tales of the Eternal Dog. Readers can acquire digital and paperback editions through their preferred bookseller via our direct Universal Book Links.',
+      featureOnHome: true,
+      archived: false,
+      published: true
+    },
+    {
+      id: 'character-cards-reader-offer-release',
+      title: 'Jack Comes Back Character Cards Reader Offer Now Available',
+      slug: 'jack-comes-back-character-cards-reader-offer-now-available',
+      date: '2026-06-10',
+      category: 'Catalog Update',
+      shortContent: 'A curated five-card 5 × 8 inch printable companion set is now available to readers joining the Sound Volumes mailing list.',
+      fullContent: 'As a companion to the publication of the series, Sound Volumes has produced a limited set of Jack Comes Back character cards. Designed to print cleanly at 5 × 8 inches, each card pairs an original character drawing with an authoritative narrative excerpt from Jack’s various lives.',
+      featureOnHome: false,
+      archived: false,
+      published: true
+    }
+  ],
+
+  events: [
+    {
+      id: 'regional-literary-symposium-2026',
+      title: 'Southwest Independent Publishers Colloquium',
+      slug: 'southwest-independent-publishers-colloquium',
+      date: '2026-11-12',
+      time: '2:00 PM CST',
+      location: 'Austin Public Library Special Collections / Hybrid Broadcast',
+      description: 'A panel on long-form historical series design and small imprint distribution featuring Sound Volumes editorial discussion.',
+      externalLink: 'https://soundvolumes.com/events',
+      isUpcoming: true,
+      archived: false,
+      published: true
+    },
+    {
+      id: 'archived-alec-rowell-interview',
+      title: 'Reading and Discussion: The Domesticated Wolf in Pleistocene Fiction',
+      slug: 'reading-and-discussion-the-domesticated-wolf',
+      date: '2026-04-18',
+      time: '6:30 PM CST',
+      location: 'Hyde Community Center Archives Room',
+      description: 'Alec Rowell discusses the research origins of Stone Dog and the archaeological record of early canine burials.',
+      isUpcoming: false,
+      archived: true,
+      published: true
+    }
+  ],
+
+  extras: [
+    {
+      id: 'jack-character-cards',
+      title: 'Jack Comes Back Character Cards',
+      slug: 'jack-comes-back-character-cards',
+      description: 'A collectible companion set for readers of the Jack Comes Back series. Each card is formatted to print cleanly at 5 × 8 inches, featuring an original character graphic and an authentic narrative paragraph from Jack’s lives through history.',
+      artwork: '/images/character-card.jpg',
+      associatedProperty: 'Jack Comes Back',
+      emailGated: true,
+      downloadDestination: '/assets/jack-character-cards-print-pack.zip',
+      mailingListProvider: 'Sound Volumes Reader Dispatch',
+      featured: true,
+      visibility: true,
+      details: {
+        formatSpec: 'Each card is designed to print at 5 × 8 inches.',
+        contents: 'One character graphic and an authoritative paragraph of text per card.',
+        previewCards: [
+          {
+            characterName: 'Jack in the Pleistocene (Stone Dog)',
+            previewExcerpt: 'The spark was struck not in subjugation, but in shared hunger on the ice margin. He was not yet a hound, and I was not yet master.',
+            image: '/images/character-card.jpg'
+          },
+          {
+            characterName: 'Jack at the Hillfort (Iron Dog)',
+            previewExcerpt: 'When the bronze shields gave way to hammered iron, the blood smelled the same on the wet moss of the ramparts.',
+            image: '/images/iron-dog.jpg'
+          },
+          {
+            characterName: 'Jack on the Silk Route (Gold Dog)',
+            previewExcerpt: 'Between the high passes of the Hindu Kush and the cedar gates of Heian-kyo, the bells on the pack mules kept the night terrors at bay.',
+            image: '/images/gold-dog.jpg'
+          },
+          {
+            characterName: 'Jack in the Sonoran Basin (Steel Dog)',
+            previewExcerpt: 'Under the creosote bushes where the heat hummed like telegraph wires, the little Scottish terrier never looked back.',
+            image: '/images/steel-dog.jpg'
+          }
+        ]
+      }
+    }
+  ],
+
+  artworks: [
+    {
+      id: 'bite-back',
+      name: 'Bite Back',
+      slug: 'bite-back',
+      imageUrl: '/images/bite-back.jpg',
+      description: '',
+      additionalInfo: '',
+      associatedBookId: '',
+      associatedBookTitle: '',
+      visibility: true,
+      ordering: 1,
+      tags: ['Jack Comes Back', 'Supplied Artwork']
+    },
+    {
+      id: 'dyak',
+      name: 'Dyak',
+      slug: 'dyak',
+      imageUrl: '/images/dyak.jpg',
+      description: '',
+      additionalInfo: '',
+      associatedBookId: '',
+      associatedBookTitle: '',
+      visibility: true,
+      ordering: 2,
+      tags: ['Jack Comes Back', 'Supplied Artwork']
+    },
+    {
+      id: 'tekhe',
+      name: 'Tekhe',
+      slug: 'tekhe',
+      imageUrl: '/images/tekhe.jpg',
+      description: '',
+      additionalInfo: '',
+      associatedBookId: '',
+      associatedBookTitle: '',
+      visibility: true,
+      ordering: 3,
+      tags: ['Jack Comes Back', 'Supplied Artwork']
+    },
+    {
+      id: 'iace',
+      name: 'Iace',
+      slug: 'iace',
+      imageUrl: '/images/iace.jpg',
+      description: '',
+      additionalInfo: '',
+      associatedBookId: '',
+      associatedBookTitle: '',
+      visibility: true,
+      ordering: 4,
+      tags: ['Jack Comes Back', 'Supplied Artwork']
+    },
+    {
+      id: 'jack',
+      name: 'Jack',
+      slug: 'jack',
+      imageUrl: '/images/jack.jpg',
+      description: '',
+      additionalInfo: '',
+      associatedBookId: '',
+      associatedBookTitle: '',
+      visibility: true,
+      ordering: 5,
+      tags: ['Jack Comes Back', 'Supplied Artwork']
+    },
+    {
+      id: 'zhok',
+      name: 'Zhok',
+      slug: 'zhok',
+      imageUrl: '/images/zhok.jpg',
+      description: '',
+      additionalInfo: '',
+      associatedBookId: '',
+      associatedBookTitle: '',
+      visibility: true,
+      ordering: 6,
+      tags: ['Jack Comes Back', 'Supplied Artwork']
+    },
+    {
+      id: 'dax',
+      name: 'Dax',
+      slug: 'dax',
+      imageUrl: '/images/dax.jpg',
+      description: '',
+      additionalInfo: '',
+      associatedBookId: '',
+      associatedBookTitle: '',
+      visibility: true,
+      ordering: 7,
+      tags: ['Jack Comes Back', 'Supplied Artwork']
+    },
+    {
+      id: 'jackie',
+      name: 'Jackie',
+      slug: 'jackie',
+      imageUrl: '/images/jackie.jpg',
+      description: '',
+      additionalInfo: '',
+      associatedBookId: '',
+      associatedBookTitle: '',
+      visibility: true,
+      ordering: 8,
+      tags: ['Jack Comes Back', 'Supplied Artwork']
+    }
+  ],
+
+  settings: {
+    soundVolumesTagline: 'Independent literary publishing. Fiction, speculative worlds, and durable inquiry.',
+    contactRouting: [
+      { key: 'general', label: 'General Inquiry', email: 'info@soundvolumes.com', description: 'Editorial inquiries and general publisher communications' },
+      { key: 'alec', label: 'Alec Rowell', email: 'alec@soundvolumes.com', description: 'Correspondence regarding Alec Rowell’s books and forthcoming works' },
+      { key: 'laurie', label: 'Laurie Freeman', email: 'laurie@soundvolumes.com', description: 'Correspondence regarding Laurie Freeman’s fiction, nonfiction, and research' },
+      { key: 'sales', label: 'Bookseller / Bulk & Wholesale', email: 'sales@soundvolumes.com', description: 'Trade orders, library procurement, and wholesale inquiries' },
+      { key: 'promos', label: 'Media / Publicity / Reviews', email: 'promos@soundvolumes.com', description: 'Review copies, interviews, and press queries' },
+      { key: 'events', label: 'Events & Speaking', email: 'promos@soundvolumes.com', description: 'Readings, panels, and academic symposium invitations' },
+      { key: 'rights', label: 'Rights & Permissions', email: 'info@soundvolumes.com', description: 'Translation, dramatic, and serialization rights' },
+      { key: 'support', label: 'Website / Download Problem', email: 'support@soundvolumes.com', description: 'Assistance with reader offers and digital assets' }
+    ],
+    announcements: {
+      soundvolumes: {
+        id: 'sv-announcement',
+        siteId: 'soundvolumes',
+        text: 'Jack Comes Back: All four titles now available via Universal Book Links.',
+        destination: '/books',
+        visibility: true
+      },
+      alec: {
+        id: 'alec-announcement',
+        siteId: 'alec',
+        text: 'Robin Pike / Hyde, Texas Mysteries: Look Through Any Window draft complete for early 2027.',
+        destination: '/work',
+        visibility: true
+      },
+      laurie: {
+        id: 'laurie-announcement',
+        siteId: 'laurie',
+        text: 'Sixer Diaspora Universe & Storm Rider Trilogy in active development.',
+        destination: '/work',
+        visibility: false // Built-in but dormant as requested in brief
+      }
+    },
+    alecSiteActiveAnnouncement: true,
+    laurieSiteDormantReadFree: true,
+    showJackOmnibusOnHome: true,
+
+    soundVolumesCopy: {
+      heroTitle: 'Sound Volumes',
+      heroSubtitle: 'Publishing Imprint',
+      heroQuote: 'Dedicated to books designed rather than decorated. Enduring fiction, speculative architecture, and disciplined inquiry.',
+      heroPrimaryBtnText: 'Browse Catalogue',
+      heroSecondaryBtnText: 'Authors & Voices',
+      heroLogoImage: '',
+      catalogueSectionTag: 'Primary Catalogue',
+      catalogueSectionTitle: 'Jack Comes Back Series',
+      catalogueSectionDescription: 'By Alec Rowell. Ten thousand years of canine reincarnation across human history.',
+      authorsSectionTag: 'Imprint Authors',
+      authorsSectionTitle: 'Independent Voices',
+      authorsSectionDescription: 'Sound Volumes supports focused standalone authors and collaborative literary universes.',
+      cataloguePageTitle: 'Published Volumes & Editions',
+      cataloguePageDescription: 'All Sound Volumes publications are distributed universally. Choose direct purchase through books2read to order via your preferred bookseller, or select More Info for complete editorial details.',
+      authorsPageTitle: 'Editorial Voices',
+      authorsPageDescription: 'Sound Volumes publishes deliberate work across speculative fiction, regional mystery, narrative nonfiction, and collaborative universe architecture.',
+      eventsPageTitle: 'Imprint Events',
+      eventsPageDescription: 'Public symposiums, independent publishing conferences, and discussions regarding Sound Volumes publications.',
+      extrasPageTitle: 'Sound Volumes Extras',
+      extrasPageDescription: 'Curated printables, character cards, and companion documents produced for readers of Sound Volumes publications.',
+      contactPageTitle: 'Contact Sound Volumes',
+      contactPageDescription: 'Communications for Sound Volumes, author Alec Rowell, and writer Laurie Freeman are received and routed via this central dispatch.',
+      footerTagline: 'Independent literary publishing. Fiction, speculative worlds, and durable inquiry.',
+      footerCopyright: 'Sound Volumes. All rights reserved. Sites designed, not decorated.',
+      footerImprintNote: 'Independent Publishing & Author Cycle'
+    },
+
+    alecCopy: {
+      brandName: 'Alec Rowell',
+      brandSubtitle: 'Novelist & Researcher',
+      heroTitle: 'Alec Rowell',
+      heroSubtitle: 'Novelist & Narrative Researcher',
+      heroQuote: 'Investigating memory, regional topography, and deep-time consciousness across speculative cycles and Texan landscapes.',
+      heroPhoto: '/images/alec-cowled.jpg',
+      heroPrimaryBtnText: 'Explore Jack Comes Back',
+      heroSecondaryBtnText: 'Forthcoming Work',
+      booksSectionTitle: 'Jack Comes Back Series',
+      booksSectionDescription: 'The complete cycle of an immortal canine consciousness reincarnating across ten thousand years of human civilization. Published by Sound Volumes.',
+      workSectionTitle: 'Current Writing & Future Volumes',
+      workSectionDescription: 'Current manuscripts in development across regional crime fiction, collaborative science fiction, and personal narrative.',
+      robinPikeTitle: 'Robin Pike / Hyde, Texas Mysteries',
+      robinPikeDescription: 'Regional investigations exploring historical tensions and community topography in Hyde, Texas.',
+      sduTitle: 'Sixer Diaspora Universe (SDU)',
+      sduDescription: 'Deep space settlement and social dispersion. Co-created with Laurie Freeman.',
+      memoirTitle: 'Memoir & Narrative Essays',
+      memoirDescription: 'Personal essays exploring childhood landscape, natural history, and literary practice.',
+      aboutTitle: 'About Alec Rowell',
+      aboutBio: 'Alec Rowell writes speculative fiction, regional mystery, and historical narrative. Author of the Jack Comes Back series published by Sound Volumes, Rowell conducts archival research into deep-time ecology and Texas Hill Country historical topography.',
+      aboutPhoto: '/images/alec-forest.jpg',
+      aboutResearchStatement: 'Areas of active inquiry include late Pleistocene domestication, Iron Age fortifications, the Trans-Pecos borderlands, and multi-generational stellar migrations.',
+      contactTitle: 'Direct Correspondence to Alec Rowell',
+      contactDescription: 'Author inquiries, reader correspondence, and rights queries are received through the central Sound Volumes dispatch desk.'
+    },
+
+    laurieCopy: {
+      brandName: 'Laurie Freeman',
+      brandSubtitle: 'Fiction & Nonfiction',
+      heroTitle: 'Laurie Freeman',
+      heroSubtitle: 'Fiction & Nonfiction',
+      heroQuote: 'Speculative universes, historical narrative, and container orchard cultivation.',
+      heroPhoto: '/images/laurie-portrait.jpg',
+      heroPrimaryBtnText: 'Selected Works',
+      heroSecondaryBtnText: 'About & Background',
+      workSectionTitle: 'Fiction & Nonfiction',
+      workSectionDescription: 'Speculative universes, young adult narratives, and container orchard horticulture.',
+      sduTitle: 'Sixer Diaspora Universe (SDU)',
+      sduDescription: 'Deep space settlement, dispersed human communities, and changing social structures. Co-created with Alec Rowell.',
+      fictionTitle: 'Other Fiction & Young Adult',
+      fictionDescription: 'Explorations of personal agency, ancient memory, and historical romance.',
+      nonfictionTitle: 'Botanical & Horticultural Nonfiction',
+      nonfictionDescription: 'Illustrated practical guides on compact container-grown fruit trees and orchard cultivation.',
+      aboutTitle: 'About Laurie Freeman',
+      aboutBio: 'Laurie Freeman writes speculative fiction and practical botanical guides. Co-creator of the Sixer Diaspora Universe, Freeman combines deep interest in social anthropology with two decades of practical experience cultivating micro-orchards.',
+      aboutPhoto: '/images/laurie-portrait.jpg',
+      aboutOrchardStatement: 'Laurie maintains research plantings of containerized stone fruit and heirloom pomes, investigating microclimate adaptation in urban settings.',
+      contactTitle: 'Contact Laurie Freeman',
+      contactDescription: 'Reader notes, horticultural inquiries, and universe development queries are routed through Sound Volumes central correspondence.'
+    }
+  }
+};

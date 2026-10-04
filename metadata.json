@@ -1,0 +1,7 @@
+{
+  "name": "Sound Volumes — Literary Publishing Imprint & Author System",
+  "description": "Sound Volumes publishing imprint, featuring authors Alec Rowell and Laurie Freeman, the Jack Comes Back series, Robin Pike Mysteries, and Sixer Diaspora Universe.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
