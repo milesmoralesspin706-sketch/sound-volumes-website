@@ -1,68 +1,83 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { getAuthenticatedAdmin } from '@/lib/auth-server';
 import { INITIAL_CMS_DATA } from '@/lib/initial-data';
 import { CMSData } from '@/lib/types';
+import { supabaseServer } from '@/lib/supabase-server';
 
-const CMS_DATA_FILE = path.join(process.cwd(), 'data', 'cms-data.json');
+const CMS_STATE_ID = 'main';
 
-// Initialize server data from disk or fallback
-function loadServerData(): CMSData {
+async function loadServerData(): Promise<CMSData> {
   try {
-    if (fs.existsSync(CMS_DATA_FILE)) {
-      const raw = fs.readFileSync(CMS_DATA_FILE, 'utf-8');
-      const parsed = JSON.parse(raw);
-      if (parsed && parsed.books && parsed.authors) {
-        return parsed;
-      }
+    const { data, error } = await supabaseServer
+      .from('cms_state')
+      .select('data')
+      .eq('id', CMS_STATE_ID)
+      .maybeSingle();
+
+    if (error) {
+      console.error('Failed to read CMS data from Supabase:', error);
+      return { ...INITIAL_CMS_DATA };
+    }
+
+    if (data?.data && typeof data.data === 'object') {
+      return data.data as CMSData;
     }
   } catch (err) {
-    console.error('Failed to read CMS data from disk:', err);
+    console.error('Failed to load CMS data from Supabase:', err);
   }
+
   return { ...INITIAL_CMS_DATA };
 }
 
-function saveServerData(data: CMSData) {
+async function saveServerData(data: CMSData): Promise<boolean> {
   try {
-    const dir = path.dirname(CMS_DATA_FILE);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
+    const { error } = await supabaseServer
+      .from('cms_state')
+      .upsert(
+        {
+          id: CMS_STATE_ID,
+          data,
+          updated_at: new Date().toISOString(),
+        },
+        {
+          onConflict: 'id',
+        }
+      );
+
+    if (error) {
+      console.error('Failed to save CMS data to Supabase:', error);
+      return false;
     }
-    fs.writeFileSync(CMS_DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+
+    return true;
   } catch (err) {
-    console.error('Failed to write CMS data to disk:', err);
+    console.error('Failed to write CMS data to Supabase:', err);
+    return false;
   }
 }
-
-// Server-side cache
-let serverCmsData: CMSData = loadServerData();
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const isPublic = searchParams.get('public') === 'true';
 
-  // Always refresh from memory or disk
-  if (!serverCmsData || !serverCmsData.books) {
-    serverCmsData = loadServerData();
-  }
+  const serverCmsData = await loadServerData();
 
-  // If public request, return only published and visible content
   if (isPublic) {
     const publicData = {
-      books: serverCmsData.books.filter(b => b.visibility),
-      authors: serverCmsData.authors.filter(a => a.visibility),
-      works: serverCmsData.works.filter(w => w.visibility),
-      news: serverCmsData.news.filter(n => n.published && !n.archived),
-      events: serverCmsData.events.filter(e => e.published && !e.archived),
-      extras: serverCmsData.extras.filter(x => x.visibility),
-      settings: serverCmsData.settings
+      books: serverCmsData.books.filter((b) => b.visibility),
+      authors: serverCmsData.authors.filter((a) => a.visibility),
+      works: serverCmsData.works.filter((w) => w.visibility),
+      news: serverCmsData.news.filter((n) => n.published && !n.archived),
+      events: serverCmsData.events.filter((e) => e.published && !e.archived),
+      extras: serverCmsData.extras.filter((x) => x.visibility),
+      settings: serverCmsData.settings,
     };
+
     return NextResponse.json(publicData);
   }
 
-  // Private Administrative Access requires authenticated session!
   const auth = await getAuthenticatedAdmin();
+
   if (!auth.authenticated) {
     return NextResponse.json(
       { error: 'Unauthorized: Author session required to access CMS data.' },
@@ -74,11 +89,14 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  // STRICT AUTHORIZATION CHECK ON EVERY MUTATION
   const auth = await getAuthenticatedAdmin();
+
   if (!auth.authenticated) {
     return NextResponse.json(
-      { error: 'Unauthorized: Valid author administrator session required to perform mutations.' },
+      {
+        error:
+          'Unauthorized: Valid author administrator session required to perform mutations.',
+      },
       { status: 401 }
     );
   }
@@ -88,33 +106,54 @@ export async function POST(req: NextRequest) {
     const { action, payload } = body;
 
     if (action === 'save_all' && payload) {
-      serverCmsData = payload;
-      saveServerData(serverCmsData);
+      const saved = await saveServerData(payload as CMSData);
+
+      if (!saved) {
+        return NextResponse.json(
+          { error: 'Failed to save CMS data to Supabase.' },
+          { status: 500 }
+        );
+      }
+
       return NextResponse.json({
         success: true,
-        message: 'Content updated successfully and saved to persistent disk storage.',
-        updatedBy: auth.email
+        message: 'Content updated successfully and saved to persistent Supabase storage.',
+        updatedBy: auth.email,
       });
     }
 
     if (action === 'reset_to_defaults') {
-      serverCmsData = { ...INITIAL_CMS_DATA };
-      saveServerData(serverCmsData);
+      const defaultData = { ...INITIAL_CMS_DATA };
+      const saved = await saveServerData(defaultData);
+
+      if (!saved) {
+        return NextResponse.json(
+          { error: 'Failed to save default CMS data to Supabase.' },
+          { status: 500 }
+        );
+      }
+
       return NextResponse.json({
         success: true,
         message: 'Content reset to Batch One defaults.',
-        updatedBy: auth.email
+        updatedBy: auth.email,
       });
     }
 
-    // Generic payload update
     if (payload && payload.books) {
-      serverCmsData = payload;
-      saveServerData(serverCmsData);
+      const saved = await saveServerData(payload as CMSData);
+
+      if (!saved) {
+        return NextResponse.json(
+          { error: 'Failed to synchronize CMS data with Supabase.' },
+          { status: 500 }
+        );
+      }
+
       return NextResponse.json({
         success: true,
         message: 'CMS state synchronized successfully.',
-        updatedBy: auth.email
+        updatedBy: auth.email,
       });
     }
 
@@ -124,6 +163,7 @@ export async function POST(req: NextRequest) {
     );
   } catch (error) {
     console.error('CMS Mutation Error:', error);
+
     return NextResponse.json(
       { error: 'Failed to process content mutation.' },
       { status: 500 }
